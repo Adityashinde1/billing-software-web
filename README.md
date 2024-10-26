@@ -26,3 +26,9 @@ Step 4: Create new angular project
 ```
 ng new my-angular-app
 ```
+
+Step 5: To run the angular application
+
+```
+ng serve
+```
