@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: space-evenly;
+      background: linear-gradient(to bottom, #00BFFF 0%, #FFFACD 100%);
+      overflow: hidden;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 850px;
+      height: 350px;
+      
+      /* border: 1px solid red; Optional: temporary border to see the image area */
+      /* background-color: lightgray; Optional: temporary background to ensure the image space */
+    }
+
+    .login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login form {
+      width: 300px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .login h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .login input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login button:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-message {
+      text-align: center;
+      margin-top: 10px; /* Space above the signup message */
+      font-size: 14px;
+      color: #333;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 10px; /* Space between the signup message and signup button */
+    }
+
+    .signup-link button {
+      width: 100%; /* Full width of the parent container */
+      padding: 10px;
+      background-color: #28a745;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .signup-link button:hover {
+      background-color: #218838;
+    }
+
+
+    .signup-message {
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container" >
+    <!-- Logo Section -->
+    <div class="logo" >
+      <!-- Ensure the correct path to the image -->
+      <img src="assets/images/logo.png" alt="Logo" >
+    </div>
+
+    <!-- Login Form Section -->
+    <div class="login">
+      <form [formGroup]="SignupForm" (ngSubmit)="onSignUp()">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Username" formControlName="username" required>
+        <input type="email" placeholder="Email Id" formControlName="email_id" required>
+        <input type="password" placeholder="Password" formControlName="password" required>
+        <!-- Sign Up Link -->
+        <div class="signup-link">
+          <button type="submit" (click)="onSignUp()" >Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
